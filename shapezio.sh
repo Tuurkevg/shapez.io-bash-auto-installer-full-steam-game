@@ -44,6 +44,7 @@ yarn --ignore-optional
 
 cd "/home/$USER/Documents/shapez.io/gulp"
 yarn
+echo -e "${RED}Do not close this terminal!! the game will stop within 60s en restart after a time!!!${NC}"
 yarn gulp &
 echo -e "${RED}Do not close this terminal!! the game will stop within 60s en restart after a time!!!${NC}"
 sleep 60
@@ -53,6 +54,10 @@ yarn gulp build.standalone-steam
 sudo yarn gulp standalone.standalone-steam.prepare
 sudo yarn gulp standalone.standalone-steam.package.linux64
 
-echo -e "${RED}shapez.io Steam version is installed in /home/$USER/Documents/shapez.io/build_output/standalone-steam/shapez-linux-x64/play.sh${NC}"
+echo -e "!!${RED}shapez.io Steam version is installed in /home/$USER/Documents/shapez.io/build_output/standalone-steam/shapez-linux-x64/play.sh${NC}"
+echo -e "$!!{RED}shapez.io Steam version is installed in /home/$USER/Documents/shapez.io/build_output/standalone-steam/shapez-linux-x64/play.sh${NC}"
+echo -e "$!!{RED}shapez.io Steam version is installed in /home/$USER/Documents/shapez.io/build_output/standalone-steam/shapez-linux-x64/play.sh${NC}"
+echo -e "$!!{RED}shapez.io Steam version is installed in /home/$USER/Documents/shapez.io/build_output/standalone-steam/shapez-linux-x64/play.sh${NC}"
+
 cd /home/$USER/Documents/shapez.io/build_output/standalone-steam/shapez-linux-x64/
 ./play.sh
