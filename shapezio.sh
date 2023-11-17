@@ -32,9 +32,9 @@ git clone https://github.com/tobspr-games/shapez.io.git
 sudo chmod +7 shapez.io/*
 cd "shapez.io"
 echo -e "${RED}installing yarn${NC}"
-echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update && sudo apt-get install yarn
-
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt install --no-install-recommends yarn -y
 echo -e "${RED}Compiling shapez.io source code${NC}"
 sudo yarn
 
@@ -44,11 +44,11 @@ yarn --ignore-optional
 
 cd "/home/$USER/Documents/shapez.io/gulp"
 yarn
-echo -e "${RED}Do not close this terminal!! the game will stop within 60s en restart after a time!!!${NC}"
+echo -e "${RED}Do not close this terminal!! the game will stop within 60s andrestart after a time!!!${NC}"
 yarn gulp &
-echo -e "${RED}Do not close this terminal!! the game will stop within 60s en restart after a time!!!${NC}"
+echo -e "${RED}Do not close this terminal!! the game will stop within 60s andrestart after a time!!!${NC}"
 sleep 60
-echo -e "${RED}Do not close this terminal!! the game will stop within 60s en restart after a time!!!${NC}"
+echo -e "${RED}Do not close this terminal!! the game will stop within 60s andrestart after a time!!!${NC}"
 pkill -f "gulp"
 yarn gulp build.standalone-steam
 sudo yarn gulp standalone.standalone-steam.prepare
